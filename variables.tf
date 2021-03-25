@@ -35,11 +35,11 @@ data "aws_ami" "centos" {
   most_recent = true
 
   filter {
-    name   = "product-code"
-    values = ["aw0evgkw8e5c1q413zgy5pjce"]
+    name   = "name"
+    values = ["BastionCentOS7*"]
   }
 
-  owners = ["aws-marketplace"]
+  owners = ["479284709538"]
 }
 
 data "aws_subnet" "public" {
