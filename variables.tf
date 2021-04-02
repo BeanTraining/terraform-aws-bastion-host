@@ -1,6 +1,10 @@
 variable "project" {
   description = "Project tag."
 }
+variable "name" {
+  description = "Name"
+  default = "Bastion Host"
+}
 
 variable "subnet_id" {
   description = "The VPC Subnet ID to launch in."
