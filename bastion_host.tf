@@ -16,7 +16,7 @@ resource "aws_instance" "server" {
   }
 
   tags = {
-    Name    = "Bastion host"
+    Name    = var.name
     Project = local.project
   }
 }
