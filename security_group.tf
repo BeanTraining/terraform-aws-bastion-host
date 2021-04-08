@@ -12,6 +12,15 @@ resource "aws_security_group" "bastion" {
   }
 }
 
+resource "aws_security_group_rule" "proxy" {
+  protocol          = "TCP"
+  from_port         = 8888
+  to_port           = 8888
+  type              = "ingress"
+  cidr_blocks       = var.allowed_hosts
+  security_group_id = aws_security_group.bastion.id
+}
+
 resource "aws_security_group_rule" "ssh" {
   protocol          = "TCP"
   from_port         = 22
